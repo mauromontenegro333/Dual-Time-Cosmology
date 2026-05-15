@@ -1,0 +1,134 @@
+theory: null
+likelihood:
+  dtc_desi_dr2_bao:
+    type: []
+    speed: -1
+    stop_at_error: false
+    version: null
+    external: 'lambda h, omega_b, omega_cdm, A_s, n_s, tau_reio, dtc_n0, dtc_zt, dtc_beta,
+      dtc_n_shelf, dtc_z_on, dtc_z_off: __import__(''dtc_likelihoods.desi_dr2_compact_bao'',
+      fromlist=[''loglike'']).loglike(h, omega_b, omega_cdm, A_s, n_s, tau_reio, dtc_n0,
+      dtc_zt, dtc_beta, dtc_n_shelf, dtc_z_on, dtc_z_off)
+
+      '
+    input_params:
+    - h
+    - omega_b
+    - omega_cdm
+    - A_s
+    - n_s
+    - tau_reio
+    - dtc_n0
+    - dtc_zt
+    - dtc_beta
+    - dtc_n_shelf
+    - dtc_z_on
+    - dtc_z_off
+    output_params: []
+params:
+  h:
+    prior:
+      min: 0.55
+      max: 0.85
+    ref: 0.674
+    proposal: 0.004
+  omega_b:
+    prior:
+      min: 0.02
+      max: 0.0245
+    ref: 0.02237
+    proposal: 0.00015
+  omega_cdm:
+    prior:
+      min: 0.09
+      max: 0.15
+    ref: 0.12
+    proposal: 0.001
+  A_s:
+    value: 2.1e-09
+  n_s:
+    value: 0.965
+  tau_reio:
+    value: 0.054
+  dtc_n0:
+    prior:
+      min: 0.4
+      max: 1.2
+    ref: 0.7194
+    proposal: 0.015
+  dtc_zt:
+    prior:
+      min: 0.5
+      max: 3.0
+    ref: 1.5454
+    proposal: 0.04
+  dtc_beta:
+    prior:
+      min: 3.0
+      max: 10.0
+    ref: 6.8739
+    proposal: 0.08
+  dtc_n_shelf:
+    prior:
+      min: 0.0
+      max: 0.8
+    ref: 0.3793
+    proposal: 0.015
+  dtc_z_on:
+    prior:
+      min: 0.5
+      max: 5.0
+    ref: 2.35
+    proposal: 0.04
+  dtc_z_off:
+    prior:
+      min: 5.0
+      max: 20.0
+    ref: 11.003
+    proposal: 0.15
+sampler:
+  mcmc:
+    sampler_type: mcmc
+    supports_periodic_params: true
+    burn_in: 0
+    max_tries: 40d
+    covmat: null
+    covmat_params: null
+    proposal_scale: 2.4
+    output_every: 60s
+    learn_every: 40d
+    temperature: 1
+    learn_proposal: true
+    learn_proposal_Rminus1_max: 2.0
+    learn_proposal_Rminus1_max_early: 30.0
+    learn_proposal_Rminus1_min: 0.0
+    max_samples: 5000
+    Rminus1_stop: 0.05
+    Rminus1_cl_stop: 0.2
+    Rminus1_cl_level: 0.95
+    Rminus1_single_split: 4
+    measure_speeds: true
+    oversample_power: 0.4
+    oversample_thin: true
+    drag: false
+    blocking:
+    - - 1
+      - - h
+        - omega_b
+        - omega_cdm
+        - dtc_n0
+        - dtc_zt
+        - dtc_beta
+        - dtc_n_shelf
+        - dtc_z_on
+        - dtc_z_off
+    callback_function: null
+    callback_every: null
+    seed: null
+    check_every: null
+    oversample: null
+    drag_limits: null
+    fallback_covmat_scale: 4
+    version: 3.6.2
+output: dtc_desi_dr2_bao_real
+version: 3.6.2

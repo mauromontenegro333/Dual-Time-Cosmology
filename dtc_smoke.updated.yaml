@@ -1,0 +1,102 @@
+theory:
+  classy:
+    path: null
+    speed: 0.2
+    stop_at_error: false
+    extra_args:
+      output: tCl,pCl,lCl,mPk
+      lensing: true
+      l_max_scalars: 2500
+      P_k_max_h/Mpc: 5.0
+      has_dtc_clock: 1
+      dtc_Omega_m: 0.315
+      dtc_Omega_r: 9.2e-05
+      dtc_n0: 0.7194
+      dtc_zt: 1.5454
+      dtc_beta: 6.8739
+      dtc_n_shelf: 0.3793
+      dtc_z_on: 2.35
+      dtc_z_off: 11.003
+      dtc_alpha: 8.0
+      dtc_gamma: 8.0
+      dtc_M_chi_over_H0: 1000.0
+      dtc_Z_chi: 1.0
+      dtc_C_X: 0.0
+    ignore_obsolete: false
+    renames:
+      As: A_s
+      ns: n_s
+      nrun: alpha_s
+      nrunrun: beta_s
+      nt: n_t
+      ntrun: alpha_t
+      rdrag: rs_drag
+      omegak: Omega_k
+      omegal: Omega_Lambda
+      w: w0_fld
+      wa: wa_fld
+      omegabh2: omega_b
+      omegab: Omega_b
+      omegach2: omega_cdm
+      omegac: Omega_cdm
+      omegam: Omega_m
+      omegan: Omega_nu
+      tau: tau_reio
+      zrei: z_reio
+      deltazrei: reionization_width
+      helium_redshift: helium_fullreio_redshift
+      helium_delta_redshift: helium_fullreio_width
+      yhe: YHe
+      yheused: YHe
+    version: v3.3.4
+    input_params:
+    - h
+    - omega_b
+    - omega_cdm
+    - A_s
+    - n_s
+    - tau_reio
+    output_params: []
+likelihood:
+  one:
+    delay: 0
+    noise: null
+    type: []
+    speed: -1
+    stop_at_error: false
+    version: null
+    input_params: []
+    output_params: []
+params:
+  h:
+    value: 0.674
+  omega_b:
+    value: 0.02237
+    renames:
+    - omegabh2
+  omega_cdm:
+    value: 0.12
+    renames:
+    - omegach2
+  A_s:
+    value: 2.1e-09
+    renames:
+    - As
+  n_s:
+    value: 0.965
+    renames:
+    - ns
+  tau_reio:
+    value: 0.054
+    renames:
+    - tau
+sampler:
+  evaluate:
+    sampler_type: uncorrelated
+    N: 1
+    override: null
+    seed: null
+    version: null
+    supports_periodic_params: false
+output: dtc_smoke
+version: 3.6.2

@@ -1,0 +1,2 @@
+#        weight    minuslogpost   minuslogprior minuslogprior__0            chi2       chi2__one
+              1              -0              -0               -0              -0              -0
